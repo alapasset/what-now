@@ -1,13 +1,17 @@
 import { div, h1, on } from 'shuutils'
 import { credentials } from './credentials'
+import { menu } from './menu'
 import { notification } from './notifications'
 import { tasks } from './tasks'
 import { timer } from './timer'
 
 export const landing = div('landing')
 
-const title = h1('text-5xl sm:text-7xl mb-4 text-blue-300', 'What now')
-landing.append(title)
+const title = h1('text-5xl sm:text-7xl mb-4 mr-6 text-blue-300', 'What now')
+const header = div('header flex items-center')
+header.append(title)
+header.append(menu)
+landing.append(header)
 landing.append(notification)
 landing.append(timer)
 
